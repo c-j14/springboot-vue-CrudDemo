@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.zcy.demo.dao.TeacherMapper">
+  <resultMap id="BaseResultMap" type="com.psbc.zcy.demo.entity.Teacher">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="t_name" jdbcType="VARCHAR" property="tName" />
+    <result column="t_id" jdbcType="VARCHAR" property="tId" />
+    <result column="t_age" jdbcType="INTEGER" property="tAge" />
+    <result column="t_sex" jdbcType="VARCHAR" property="tSex" />
+    <result column="t_address" jdbcType="VARCHAR" property="tAddress" />
+    <result column="t_subject" jdbcType="VARCHAR" property="tSubject" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, t_name, t_id, t_age, t_sex, t_address, t_subject
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zcy_teacher
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zcy_teacher
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.psbc.zcy.demo.entity.Teacher">
+    insert into zcy_teacher (id, t_name, t_id, 
+      t_age, t_sex, t_address, 
+      t_subject)
+    values (#{id,jdbcType=INTEGER}, #{tName,jdbcType=VARCHAR}, #{tId,jdbcType=VARCHAR}, 
+      #{tAge,jdbcType=INTEGER}, #{tSex,jdbcType=VARCHAR}, #{tAddress,jdbcType=VARCHAR}, 
+      #{tSubject,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.psbc.zcy.demo.entity.Teacher">
+    insert into zcy_teacher
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tName != null">
+        t_name,
+      </if>
+      <if test="tId != null">
+        t_id,
+      </if>
+      <if test="tAge != null">
+        t_age,
+      </if>
+      <if test="tSex != null">
+        t_sex,
+      </if>
+      <if test="tAddress != null">
+        t_address,
+      </if>
+      <if test="tSubject != null">
+        t_subject,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tName != null">
+        #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="tId != null">
+        #{tId,jdbcType=VARCHAR},
+      </if>
+      <if test="tAge != null">
+        #{tAge,jdbcType=INTEGER},
+      </if>
+      <if test="tSex != null">
+        #{tSex,jdbcType=VARCHAR},
+      </if>
+      <if test="tAddress != null">
+        #{tAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="tSubject != null">
+        #{tSubject,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.zcy.demo.entity.Teacher">
+    update zcy_teacher
+    <set>
+      <if test="tName != null">
+        t_name = #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="tId != null">
+        t_id = #{tId,jdbcType=VARCHAR},
+      </if>
+      <if test="tAge != null">
+        t_age = #{tAge,jdbcType=INTEGER},
+      </if>
+      <if test="tSex != null">
+        t_sex = #{tSex,jdbcType=VARCHAR},
+      </if>
+      <if test="tAddress != null">
+        t_address = #{tAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="tSubject != null">
+        t_subject = #{tSubject,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.zcy.demo.entity.Teacher">
+    update zcy_teacher
+    set t_name = #{tName,jdbcType=VARCHAR},
+      t_id = #{tId,jdbcType=VARCHAR},
+      t_age = #{tAge,jdbcType=INTEGER},
+      t_sex = #{tSex,jdbcType=VARCHAR},
+      t_address = #{tAddress,jdbcType=VARCHAR},
+      t_subject = #{tSubject,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.psbc.zcy.demo.entity.Teacher">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="t_name" jdbcType="VARCHAR" property="tName" />
+    <result column="t_id" jdbcType="VARCHAR" property="tId" />
+    <result column="t_age" jdbcType="INTEGER" property="tAge" />
+    <result column="t_sex" jdbcType="VARCHAR" property="tSex" />
+    <result column="t_address" jdbcType="VARCHAR" property="tAddress" />
+    <result column="t_subject" jdbcType="VARCHAR" property="tSubject" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, t_name, t_id, t_age, t_sex, t_address, t_subject
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from zcy_teacher
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from zcy_teacher
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.psbc.zcy.demo.entity.Teacher">
+    insert into zcy_teacher (id, t_name, t_id, 
+      t_age, t_sex, t_address, 
+      t_subject)
+    values (#{id,jdbcType=INTEGER}, #{tName,jdbcType=VARCHAR}, #{tId,jdbcType=VARCHAR}, 
+      #{tAge,jdbcType=INTEGER}, #{tSex,jdbcType=VARCHAR}, #{tAddress,jdbcType=VARCHAR}, 
+      #{tSubject,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.psbc.zcy.demo.entity.Teacher">
+    insert into zcy_teacher
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tName != null">
+        t_name,
+      </if>
+      <if test="tId != null">
+        t_id,
+      </if>
+      <if test="tAge != null">
+        t_age,
+      </if>
+      <if test="tSex != null">
+        t_sex,
+      </if>
+      <if test="tAddress != null">
+        t_address,
+      </if>
+      <if test="tSubject != null">
+        t_subject,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tName != null">
+        #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="tId != null">
+        #{tId,jdbcType=VARCHAR},
+      </if>
+      <if test="tAge != null">
+        #{tAge,jdbcType=INTEGER},
+      </if>
+      <if test="tSex != null">
+        #{tSex,jdbcType=VARCHAR},
+      </if>
+      <if test="tAddress != null">
+        #{tAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="tSubject != null">
+        #{tSubject,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.psbc.zcy.demo.entity.Teacher">
+    update zcy_teacher
+    <set>
+      <if test="tName != null">
+        t_name = #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="tId != null">
+        t_id = #{tId,jdbcType=VARCHAR},
+      </if>
+      <if test="tAge != null">
+        t_age = #{tAge,jdbcType=INTEGER},
+      </if>
+      <if test="tSex != null">
+        t_sex = #{tSex,jdbcType=VARCHAR},
+      </if>
+      <if test="tAddress != null">
+        t_address = #{tAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="tSubject != null">
+        t_subject = #{tSubject,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.psbc.zcy.demo.entity.Teacher">
+    update zcy_teacher
+    set t_name = #{tName,jdbcType=VARCHAR},
+      t_id = #{tId,jdbcType=VARCHAR},
+      t_age = #{tAge,jdbcType=INTEGER},
+      t_sex = #{tSex,jdbcType=VARCHAR},
+      t_address = #{tAddress,jdbcType=VARCHAR},
+      t_subject = #{tSubject,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

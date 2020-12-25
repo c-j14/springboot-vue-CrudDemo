@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.psbc.zcy.demo.dao.TeacherDAO">
+    <resultMap id="TeacherResultMap" type="com.psbc.zcy.demo.dto.Teacher">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="t_name" jdbcType="VARCHAR" property="tName"/>
+        <result column="t_id" jdbcType="VARCHAR" property="tId"/>
+        <result column="t_age" jdbcType="VARCHAR" property="tAge"/>
+        <result column="t_sex" jdbcType="VARCHAR" property="tSex"/>
+        <result column="t_address" jdbcType="VARCHAR" property="tAddress"/>
+        <result column="t_subject" jdbcType="VARCHAR" property="tSubject"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.psbc.zcy.demo.dto.Teacher">
+        insert into zcy_teacher(
+            t_name,
+            t_id,
+            t_age,
+            t_sex,
+            t_address,
+            t_subject
+        ) values
+        (
+            #{tName},
+            #{tId},
+            #{tAge},
+            #{tSex},
+            #{tAddress},
+            #{tSubject}
+        )
+    </insert>
+    <select id="queryAllTeacher" resultMap="TeacherResultMap">
+        select
+            id,
+            t_name,
+            t_id,
+            t_age,
+            t_sex,
+            t_address,
+            t_subject
+        from zcy_teacher
+    </select>
+    <select id="queryAllTeacherByQ" resultMap="TeacherResultMap">
+        select
+            id,
+            t_name,
+            t_id,
+            t_age,
+            t_sex,
+            t_address,
+            t_subject
+        from zcy_teacher where t_name=#{q} or t_id=#{q} or t_sex=#{q} or t_address=#{q} or t_subject=#{q}
+    </select>
+    <select id="queryTeacherBytId" parameterType="com.psbc.zcy.demo.dto.Teacher" resultMap="TeacherResultMap">
+        select
+            id,
+            t_name,
+            t_id,
+            t_age,
+            t_sex,
+            t_address,
+            t_subject
+        from zcy_teacher
+        where t_id=#{tId}
+    </select>
+    <update id="updateTeacher" parameterType="com.psbc.zcy.demo.dto.Teacher">
+        update zcy_teacher set
+            t_name = #{tName},
+            t_id = #{tId},
+            t_age = #{tAge},
+            t_sex = #{tSex},
+            t_address = #{tAddress},
+            t_subject = #{tSubject}
+        where id = #{id}
+    </update>
+    <delete id="deleteTeacher" parameterType="com.psbc.zcy.demo.dto.Teacher">
+        delete from zcy_teacher where t_id = #{tId}
+    </delete>
+
+    <delete id="deleteTeacherById">
+        delete from zcy_teacher where id = #{id}
+    </delete>
+</mapper>

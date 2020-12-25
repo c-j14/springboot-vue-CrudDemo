@@ -1,0 +1,31 @@
+= Swagger3接口文档
+
+
+[[_overview]]
+== Overview
+更多请咨询服务开发者钟昌余。
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : 钟昌余。
+__Contact Email__ : rain66_zcy@163.com
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8443
+__BasePath__ : /
+
+
+=== Tags
+
+* 教师信息管理 : Teacher Controller
+
+
+

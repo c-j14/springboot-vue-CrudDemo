@@ -1,0 +1,46 @@
+
+[[_definitions]]
+== Definitions
+
+[[_result]]
+=== Result
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**code** +
+__optional__|integer (int32)
+|**data** +
+__optional__|object
+|**message** +
+__optional__|string
+|===
+
+
+[[_teacher]]
+=== Teacher
+教师实体
+
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**id** +
+__optional__|编号|integer (int32)
+|**tAddress** +
+__optional__|地址 +
+**Length** : `1 - 100`|string
+|**tAge** +
+__optional__|年龄|integer (int32)
+|**tId** +
+__optional__|教师编号|string
+|**tName** +
+__optional__|教师姓名|string
+|**tSex** +
+__optional__|性别|string
+|**tSubject** +
+__optional__|科目|string
+|===
+
+
+
